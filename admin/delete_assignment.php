@@ -10,7 +10,9 @@ if (!isAdmin()) {
 
 if (isset($_GET['id'])) {
     $id = mysqli_real_escape_string($conn, $_GET['id']);
-    $sql = "DELETE FROM user_reports WHERE id = '$id'";
+
+    // Correct table name (previously used 'user_reports' incorrectly)
+    $sql = "DELETE FROM user_reports  WHERE id = '$id'";
     mysqli_query($conn, $sql);
 }
 

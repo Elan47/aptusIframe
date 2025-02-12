@@ -20,7 +20,7 @@ $hashed_password = password_hash('user@123', PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$hashed_password')";
     if (mysqli_query($conn, $sql)) {
-        sendLoginCredentials($email, $password);
+        // sendLoginCredentials($email, $password);
         $success = "User added successfully and credentials sent to user's email.";
     } else {
         $error = "Error adding user: " . mysqli_error($conn);

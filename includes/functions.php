@@ -3,7 +3,7 @@ session_start();
 
 function checkLogin() {
     if (!isset($_SESSION['user_id'])) {
-        header("Location: /login.php");
+        header("Location: ../login.php");
         exit();
     }
 }
@@ -18,7 +18,7 @@ function sendLoginCredentials($email, $password) {
     $message = "Hello,\n\nYour login credentials for APTUS are:\n";
     $message .= "Email: " . $email . "\n";
     $message .= "Password: " . $password . "\n";
-    $message .= "Please login at: http://aptus.alchemdigital.com/login\n";
+    // $message .= "Please login at: http://aptus.alchemdigital.com/login\n";
     $headers = "From: admin@aptusindia.com";
 
     return mail($to, $subject, $message, $headers);
