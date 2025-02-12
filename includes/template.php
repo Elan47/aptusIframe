@@ -34,11 +34,15 @@ function includeTemplate($title, $content) {
                         <li class="nav-item"><a class="nav-link" href="../admin/reports.php">Reports</a></li>
                         <li class="nav-item"><a class="nav-link" href="../admin/assignments.php">Assignments</a></li>
                         <li class="nav-item"><a class="nav-link" href="../admin/profile.php">Profile</a></li>
-                        <?php else: ?>
-                        <li class="nav-item"><a class="nav-link" href="./dashboard.php">Dashboard</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./profile.php">Profile</a></li>
-                        <?php endif; ?>
                         <li class="nav-item"><a class="nav-link" href="../logout.php">Logout</a></li>
+                        <?php elseif (isUser()): ?>
+                        <!-- <li class="nav-item"><a class="nav-link" href="./dashboard.php">Dashboard</a></li> -->
+                        <li class="nav-item"><a class="nav-link" href="./reports.php">Reports</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./profile.php">Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../logout.php">Logout</a></li>
+                        <?php else: ?>
+                        
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>
